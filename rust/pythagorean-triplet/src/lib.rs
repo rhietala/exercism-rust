@@ -1,6 +1,6 @@
 pub fn find() -> Option<u32> {
     for a in 1..1000 {
-        for b in 1..a {
+        for b in 1..(1000 - a) {
             // a + b + c == 1000, therefore
             let c = 1000 - a - b;
 
