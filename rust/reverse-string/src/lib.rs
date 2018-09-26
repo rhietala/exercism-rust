@@ -1,10 +1,12 @@
-extern crate itertools;
-use itertools::Itertools;
-
 pub fn reverse(input: &str) -> String {
-    let reversed: Vec<char> = input
+    let mut chars: Vec<char> = input
         .chars()
-        .reverse();
+        .collect();
 
-    reversed
+    // have to do this on its own line, otherwise it complains that
+    // found type is ()
+    // maybe something to do with .reverse() mutating the value in place
+    chars.reverse();
+
+    return chars.into_iter().collect();
 }
